@@ -1,0 +1,13 @@
+classes:
+- system_legacy.linux.system.xenial
+- system_legacy.jenkins.slave.single
+- system_legacy.aptly.client.publisher
+
+parameters:
+  _param:
+    salt_master_host: 10.10.100.81
+    single_address: 10.0.175.79
+  linux:
+    system:
+      name: jsl09
+      domain: mk-ci.local

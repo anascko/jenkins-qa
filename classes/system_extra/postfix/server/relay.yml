@@ -1,0 +1,17 @@
+classes:
+  - service.postfix.relay
+parameters:
+  postfix:
+    relay:
+      # Relayhost is resolved by MX records of cloudlab.cz
+      host: cloudlab.cz
+      sasl:
+        user: relay@cloudlab.cz
+        password: Boo1aVieseidae2vainoph3jaequ4jah
+      aliases:
+        webmaster: root
+        hostmaster: root
+        mailer-daemon: root
+        abuse: root
+        security: root
+        root: root@tcpcloud.eu

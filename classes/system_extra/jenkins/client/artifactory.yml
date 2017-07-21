@@ -1,0 +1,7 @@
+parameters:
+  jenkins:
+    client:
+      artifactory:
+        mcp-ci:
+          url: https://artifactory.mcp.mirantis.net
+          credential_id: artifactory

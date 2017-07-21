@@ -1,0 +1,121 @@
+parameters:
+  jenkins:
+    client:
+      node:
+        jsl01:
+          remote_home: /var/lib/jenkins
+          desc: ""
+          num_executors: 8
+          node_mode: Normal
+          ret_strategy: Always
+          labels:
+            - python
+            - test
+            - vm
+          launcher:
+             type: jnlp
+        jsl02:
+          remote_home: /var/lib/jenkins
+          desc: ""
+          num_executors: 8
+          node_mode: Normal
+          ret_strategy: Always
+          labels:
+            - python
+            - test
+            - vm
+          launcher:
+             type: jnlp
+        jsl03:
+          remote_home: /var/lib/jenkins
+          desc: ""
+          num_executors: 8
+          node_mode: Normal
+          ret_strategy: Always
+          labels:
+            - python
+            - test
+            - vm
+          launcher:
+             type: jnlp
+        jsl04:
+          remote_home: /var/lib/jenkins
+          desc: ""
+          num_executors: 8
+          node_mode: Normal
+          ret_strategy: Always
+          labels:
+            - python
+            - test
+            - vm
+          launcher:
+             type: jnlp
+        jsl05:
+          remote_home: /var/lib/jenkins
+          desc: "Jenkins bare metal slave"
+          num_executors: 8
+          node_mode: Normal
+          ret_strategy: Always
+          labels:
+            - docker
+            - hw
+            - python
+            - qemu
+            - test
+          launcher:
+             type: jnlp
+        jsl06:
+          remote_home: /var/lib/jenkins
+          desc: ""
+          num_executors: 8
+          node_mode: Normal
+          ret_strategy: Always
+          labels:
+            - docker
+            - hw
+            - python
+            - qemu
+            - test
+          launcher:
+             type: jnlp
+        jsl07:
+          remote_home: /var/lib/jenkins
+          desc: ""
+          num_executors: 8
+          node_mode: Normal
+          ret_strategy: Always
+          labels:
+            - docker
+            - hw
+            - python
+            - qemu
+            - test
+          launcher:
+             type: jnlp
+        jsl08:
+          remote_home: /var/lib/jenkins
+          desc: ""
+          num_executors: 8
+          node_mode: Normal
+          ret_strategy: Always
+          labels:
+            - docker
+            - hw
+            - python
+            - qemu
+            - test
+          launcher:
+             type: jnlp
+        jsl09:
+          remote_home: /var/lib/jenkins
+          desc: ""
+          num_executors: 8
+          node_mode: Normal
+          ret_strategy: Always
+          labels:
+            - docker
+            - hw
+            - python
+            - qemu
+          launcher:
+             type: jnlp

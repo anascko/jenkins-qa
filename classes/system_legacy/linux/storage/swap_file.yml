@@ -1,0 +1,12 @@
+parameters:
+  _param:
+    linux_swap_file_size: 1024
+  linux:
+    storage:
+      enabled: true
+      swap:
+        file:
+          enabled: true
+          engine: file
+          device: /swapfile
+          size: ${_param:linux_swap_file_size}

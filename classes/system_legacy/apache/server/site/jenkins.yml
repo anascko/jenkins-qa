@@ -1,0 +1,62 @@
+classes:
+  - system_legacy.apache.server.single
+  - system_legacy.apache.server.ssl.mirantis
+  - system_legacy.jenkins.common
+
+parameters:
+  apache:
+    server:
+      modules:
+        - headers
+        - proxy_http
+      site:
+        jenkins:
+          enabled: true
+          type: proxy
+          name: jenkins
+          proxy:
+            initial_pooled: false
+            host: 127.0.0.1
+            port: 8080
+            protocol: http
+            nocanon: true
+            preservehost: true
+          ssl:
+            enabled: true
+            strict_transport_security: true
+            key: ${_param:ssl_mirantis_jenkins_key}
+            cert: ${_param:ssl_mirantis_jenkins_cert}
+            chain: ${_param:ssl_mirantis_jenkins_chain}
+          host:
+            name: ${_param:jenkins_server_host}
+            port: 443
+          locations:
+            - uri: /git
+              auth:
+                engine: "none"
+                require:
+                  - "all granted"
+            - uri: /ghprbhook
+              auth:
+                engine: "none"
+                require:
+                  - "all granted"
+            - uri: /github-webhook
+              auth:
+                engine: "none"
+                require:
+                  - "all granted"
+            - uri: /gitlab
+              auth:
+                engine: "none"
+                require:
+                  - "all granted"
+
+        jenkins_redirect_http:
+          enabled: true
+          type: redirect
+          name: jenkins_redirect_http
+          target_url: https://${_param:jenkins_server_host}
+          redirect_mode: rewrite
+          host:
+            name: ${_param:jenkins_server_host}

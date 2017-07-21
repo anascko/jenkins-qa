@@ -1,0 +1,21 @@
+parameters:
+  salt:
+    master:
+      environment:
+        prd:
+          formula:
+            postgresql:
+              source: pkg
+              name: salt-formula-postgresql
+            nginx:
+              source: pkg
+              name: salt-formula-nginx
+            memcached:
+              source: pkg
+              name: salt-formula-memcached
+            supervisor:
+              source: pkg
+              name: salt-formula-supervisor
+            python:
+              source: pkg
+              name: salt-formula-python

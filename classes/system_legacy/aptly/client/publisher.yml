@@ -1,0 +1,8 @@
+classes:
+  - service.aptly.client.publisher
+  - system_legacy.aptly.server.repo
+  - system_legacy.aptly.server.mirror
+parameters:
+  aptly:
+    publisher:
+      enabled: true

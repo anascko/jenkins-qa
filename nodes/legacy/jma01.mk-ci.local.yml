@@ -1,0 +1,56 @@
+classes:
+  - system_legacy.linux.system.xenial
+  - system_legacy.jenkins.master.single
+  - system_legacy.apache.server.single
+  - system_legacy.apache.server.site.jenkins
+  - system_legacy.apache.server.site.status
+  - system_legacy.jenkins.client.single
+  # Deploy jobs
+  - system.jenkins.client.job.debian
+  - system.jenkins.client.job.debian.packages.testing
+  - system.jenkins.client.job.deploy
+  - system.jenkins.client.job.opencontrail
+  - system.jenkins.client.job.salt-formulas
+  - system.jenkins.client.job.salt-models
+  - system_extra.jenkins.client.job.salt-models.tests
+  - system_extra.jenkins.client.job.salt-models.git-mirrors
+  - system.jenkins.client.job.aptly
+  # Build images jobs
+  - system.jenkins.client.job.image.centos
+  - system.jenkins.client.job.image.debian
+  - system.jenkins.client.job.image.ubuntu
+  # Build docker images jobs
+  - system.jenkins.client.job.docker
+  - system.jenkins.client.job.docker.build-images
+  - system.jenkins.client.job.docker.oss
+  - system.jenkins.client.job.docker.testing
+  # Gating jobs
+  - system.jenkins.client.job.gating
+  # Others
+  - system.jenkins.client.job.git-mirrors.upstream.pipelines
+  - system.jenkins.client.job.test_pipelines
+  - system.jenkins.client.job.kill_stuck_jobs
+  - system.jenkins.client.job.oss
+  - system.jenkins.client.job.git-mirrors.upstream.oss
+  - system.jenkins.client.job.git-mirrors.upstream.templates
+  - system.jenkins.client.job.git-mirrors.downstream.templates
+  - system.jenkins.client.job.git-mirrors.upstream.docker_images
+  - system.jenkins.client.job.git-mirrors.downstream.docker_images
+  - system.jenkins.client.job.git-mirrors.upstream.debian-packages
+  - system.jenkins.client.job.git-mirrors.downstream.debian-packages
+  - system.jenkins.client.job.git-mirrors.upstream.salt_formulas_utils
+  - system.jenkins.client.job.git-mirrors.downstream.salt_formulas_utils
+
+parameters:
+  _param:
+    salt_master_host: 10.10.100.81
+    single_address: 10.10.100.82
+    jenkins_gerrit_url: "ssh://jenkins-mk@gerrit.mcp.mirantis.net:29418"
+    jenkins_aptly_api_url: "http://10.10.100.85:8081"
+    jenkins_aptly_url: "http://apt-mk.mirantis.com"
+    jenkins_salt_api_url: "http://${_param:salt_master_host}:8000"
+    jenkins_salt_model_name: mk-ci
+  linux:
+    system:
+      name: jma01
+      domain: mk-ci.local

@@ -1,0 +1,174 @@
+parameters:
+  linux:
+    system:
+      user:
+        root:
+          enabled: true
+          name: root
+          home: /root
+        vmikes:
+          enabled: true
+          name: vmikes
+          sudo: true
+          full_name: Vlasta Mikes
+          home: /home/vmikes
+        newt:
+          enabled: true
+          name: newt
+          sudo: true
+          full_name: Ales Komarek
+          home: /home/newt
+          email: mail@newt.cz
+        jpavlik:
+          enabled: true
+          name: jpavlik
+          sudo: true
+          full_name: Jakub Pavlik
+          home: /home/jpavlik
+        tux:
+          enabled: true
+          name: tux
+          sudo: true
+          full_name: Adam Tengler
+          home: /home/tux
+        marco:
+          enabled: true
+          name: marco
+          sudo: true
+          full_name: Marek Celoud
+          home: /home/marco
+        filip:
+          enabled: true
+          name: filip
+          sudo: true
+          full_name: Filip Pytloun
+          home: /home/filip
+          email: filip@pytloun.cz
+        vzach:
+          enabled: true
+          name: vzach
+          sudo: true
+          full_name: Vlastimil Zach
+          home: /home/vzach
+        dcech:
+          enabled: true
+          name: dcech
+          sudo: true
+          full_name: Daniel Cech
+          home: /home/dcech
+        pcizinsky:
+          enabled: true
+          name: pcizinsky
+          sudo: true
+          full_name: Pavel Cizinsky
+          home: /home/pcizinsky
+        jjosef:
+          enabled: true
+          name: jjosef
+          sudo: true
+          full_name: Jakub Josef
+          home: /home/jjosef
+          email: jakub.josef@gmail.com
+        mpolreich:
+          enabled: true
+          name: mpolreich
+          sudo: true
+          full_name: Martin Polreich
+          home: /home/mpolreich
+        chnyda:
+          enabled: true
+          name: chnyda
+          sudo: true
+          full_name: Cedric Hnyda
+          home: /home/chnyda
+  openssh:
+    client:
+      enabled: true
+    server:
+      enabled: true
+      user:
+        vmikes:
+          enabled: true
+          public_keys:
+          - ${public_keys:vmikes}
+          user: ${linux:system:user:vmikes}
+        newt:
+          enabled: true
+          public_keys:
+          - ${public_keys:newt}
+          user: ${linux:system:user:newt}
+        jpavlik:
+          enabled: true
+          public_keys:
+          - ${public_keys:jpavlik}
+          user: ${linux:system:user:jpavlik}
+        tux:
+          enabled: true
+          public_keys:
+          - ${public_keys:tux}
+          user: ${linux:system:user:tux}
+        marco:
+          enabled: true
+          public_keys:
+          - ${public_keys:marco}
+          user: ${linux:system:user:marco}
+        filip:
+          enabled: true
+          public_keys:
+          - ${public_keys:filip}
+          user: ${linux:system:user:filip}
+        vzach:
+          enabled: true
+          public_keys:
+          - ${public_keys:vzach}
+          user: ${linux:system:user:vzach}
+        dcech:
+          enabled: true
+          public_keys:
+          - ${public_keys:dcech}
+          user: ${linux:system:user:dcech}
+        pcizinsky:
+          enabled: true
+          public_keys:
+          - ${public_keys:pcizinsky}
+          user: ${linux:system:user:pcizinsky}
+        jjosef:
+          enabled: true
+          public_keys:
+          - ${public_keys:jjosef}
+          user: ${linux:system:user:jjosef}
+        mpolreich:
+          enabled: true
+          public_keys:
+          - ${public_keys:mpolreich}
+          user: ${linux:system:user:mpolreich}
+        chnyda:
+          enabled: true
+          public_keys:
+          - ${public_keys:chnyda}
+          user: ${linux:system:user:chnyda}
+  public_keys:
+    vmikes:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCXng0oUbSGMlZCamlSWuc4jzgTym+p9u0ukbQvaWW2cneOhLw6QbVkOgRETBIfXitiIB+5nNqTYy7lrYqc3wofjZJzonR07oFoNcyhITLnKjLHV9eZ8aRhwKL2PONyp8d61cdm5zqeth1tMP8uBB+SOn+aD12Hu5tfTJjQeH286p+Xt75Llo/bHybfYmt2HaV9Ts6qb/Kw3Eom0Jkjh8837navek/PnFF7WAkM8GvP5Taqzp4Tmu2UfLeMv4459q+ZiS56WRbcixBQGb7uUUy4jkuis0batBNoY0pwMaaTj8KzSwrQ8shc/LuU2QhR7xwXVIgZR/Yqa/Ojw/U36N4t v.mikes@tcpisek.cz
+    newt:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3odU+3V2uDA2ptAFL9hrJRPNEEdAyztWOZFQ5Oyd9oerTGOU3p4xmrgWWjfKFKbYGhiiIUcYAol5PkTfKukGEkkjCHYA1t023soCaaAj85wCZCnw2zQNAziwxTYmAzTqgxiSvtZNMMrtJvFHRIRDzJ3M1lV0prWNWkMM1/3FAd4W49y6VT3fkMCo8uqG7CfGdgR2DgBCxf9KaNPfW5eDEPOgmE5lK8tVSEI6T+Cg7hbcTf4lFYnlFBnlQgp/0JstsM4Vbwb4B34LOpOsf2S8rrWk2xQMjwaMHXkc2s/E8iW3F5nVFuyEXYISFQIiAHw8dzC6CHgLcyHUVWwznKawZ newt@newt-dev1
+    jpavlik:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAylDZDzgMuEsJQpwFHDW+QivCVhryxXd1/HWqq1TVhJmT9oNAYdhUBnf/9kVtgmP0EWpDJtGSEaSugCmx8KE76I64RhpOTlm7wO0FFUVnzhFtTPx38WHfMjMdk1HF8twZU4svi72Xbg1KyBimwvaxTTd4zxq8Mskp3uwtkqPcQJDSQaZYv+wtuB6m6vHBCOTZwAognDGEvvCg0dgTU4hch1zoHSaxedS1UFHjUAM598iuI3+hMos/5hjG/vuay4cPLBJX5x1YF6blbFALwrQw8ZmTPaimqDUA9WD6KSmS1qg4rOkk4cszIfJ5vyymMrG+G3qk5LeT4VrgIgWQTAHyXw== pavlk.jakub@gmail.com
+    tux:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDXEN5qmte4oMYFCMZtuNzWiu5M32Dp0OsfR1pSz5gMMQF1Sw3xEDXEATEWhyvJTuVtFQasWVcMCYzEPev8H54UK97dLlxHxEDD9PQYY2O+xu/Rq+p/jryJ/T3mO7LDjUUXtHkUnsDZ51G+sFAWktE+FifwrEDmAEnRucLqOzVhehelG73S3uqfxVsPTsW2CcVIZICKtvdODbgAVyCf1LRR0LJv4fXqcyebCbzIrk4NWJhc474TH88niC7PH5VfxSfXZdKoi3yKVMgqdGSUxGhkx3D5CwCR9K+kUnP0rE5GNIqoCiS8iNbWl6POfMPSxH/ckqZN1h8El6SEoPJzVNp9 tux@tux-workbook
+    marco:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDmrJJsRR1dIqaomk83+sn5OnRLvVqrxtROT2uO83W0C4036t3OfJEBL2COJ4Z1iQmyoQUcIpRdJns+Ft8GpVEEQ+mW4eo33jhVEkfLBzRTE7f/WqDmMeDbdxO7LdUNlIIc40KBPcnJWvEorqV2z2UF0+xqittTE34A3CgF82BI2Nx6vCNhgnJJnCyYisD+wT4f+Ovor3Rm2s6zdnJRqcLgx5lkNx6fM2ffkD36MjyPyVYWvFqw68kEsBPcpB0EmiINKQRg3A/iPvUgRWMl9nSvSMVopkbTOBpSK3H9hzGCLiQJvE8pGjHhb7SOix0p0sFdNrNRiC5ayaGQUDQgWH8h marco@marco-MS-7699
+    filip:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCcuHTjJ3CoWdkmvtag07bIWeyAMqFLAN+QApat7TXUcDYmm/neK4Asg3m/UicofZnB80cI4tjnB84Z8WazLHMxVTLwHbEqTVbXVeKebiZ5yn0yo4ndRzmppUfSvs0xcMysBwu+hYAnIDXTedctbciMSYKbuQ+b9XZ4mFZ/2RHG4QBA/dPUxJdCwvkBu7AOV+6zaRSR99UETr5nxICQUGVJBTy6VkCsch4mK3/K2SrujODUhytcROg+6ejV/aZHWH9xIFRBLfhmSFeOC6oneBWo4QBQ2tTZgb7Go744JpkhkoMfWQnR2s6cCgUN60BJ6j5snqmbv9/2CmgbI4UprC+E6lL04K/Jbgjv+fi3KqnCIpRiQzahmjSeeYdPducWme3BVDceUSb5EzF/RjSDi4yHcTWJS0TcPf195p42O1G6tLw5zfmIu2+PWUq1L4pLualboUbaDtwqg0WaLWKONi9tJkOS1OMz4hxqEbWBAtFNJLHC5K+OXcV8Yt6C7iB2dEZ4c26MAi1pdMqhFjxYiCGYKZ4lyV9xo8tWcs5fiUIi2PKyLQ9SMRQbhXIcb9ENby2D/ijh5AVpbBew8iaUQQKg83Yo0z2PwTWyNFuXECAl667XaTNZEMVUjo5yU/OtktVZiH6ZfvEFwj+7OpLBiZ3sFgp/7EHcGXa0FL6BcXuwfQ== filip@pytloun.cz
+    vzach:
+      key: AAAAB3NzaC1yc2EAAAABJQAAAQEAn4MJUkXbiZPPEcdKijB4MqnjPGk80x5W+8XsMvZuUqElmuLgB30kdCnSCBgipYPor3m8wakdJTTwiY6P50yhtp/tD2b4t1TC1djPwiNS/6JwjZawj30bS5ZrVKeTHtOq6E0tf927svXgEE21/ADgWpMoDeQ/pKlbt0m/U8YGBCmJ7cBa8ggGHhvJIwCNhpELn02vKV8Qfx44rk+DoxLBwQUHQ8PsEwtoSCLMIulpLflptak1pgvN6ggA5p15i36OyJkobI1yR9YEgtb+8yQqofu2DZ+v+9Qhbb+C0446RnyGzfvk/DreCeI4rJh5/6QZjwv3XfYDER5LbNCnoOQAsQ== v.zach@tcpcloud.eu
+    dcech:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC8A26XMLUnXkxv4e/vByD4W4PQ0ZdgGZz5Tg6G/fQKuSa+9zRucG6IlOchJPikwrDyTrojHTGAClHPuyr2bPIRrjFy4oUTZNdjiDptV99Zv/kHRStYzPyZ4KabnFLJVKNtyKKagk6Z3wpzEjFjRHWJK7A5bIzHfd7Amx/frdLKRo9YZjGbLnZRw6mWGqZYyp2/5a/5rKqH1BhMQggDGkAwFGWYQByZzk2F81nDnkt3CY3bi24gX90w4mgFjP8B0m0QCEhcGqpfOKsQTnIyBCtztEHBiUplzBN+RHS4dDOIEs9SWrXLiMFakWu1Vr6bUa7v5xGaNN8XAWjd3xdsy4hvJjJHU5HPaMY9MGH+N6W0UUZxIF0MuxDNP03MDM1uA5mRWTdwffARaDySYaEUrUEYJmzFAtk700Jv/Aav7QixLoIeKU9SAKYvVb7XNlMWgiswQdRPoiMpXPXPw+bMhjpimHJa4n0KFGAUO/cRD1dpJKybqxDe2ip57JzpFkm5PxuNht5qmEreKcS5dWQqm0fDE9wv8cCUMnWQv36f0IDeVpftmeDREatqXSeUjES7NFQOgIQW5C5Pl+8ZHTXw46c/uh89gUILJT2tS/mOXaU4mELox1Qv8vc/laoGAec+TGD0flf75LfiuLOK6JOYX0QVW13ko1wc3CyJzHOi1sFEAw== daniel.cech@tcpcloud.eu
+    pcizinsky:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCt9HA2bUwCVGGdUjyFzdPFp0j2z9XanLW9gHZ3BhB6Wc4ficU6zmbqYxrHUvdmUrRJbLMEAo9JDlzAIw4CPGhRkD3d7HfnmlEYcEeizLnnC+CmKo3+mrwkQIzWIz6PJOh1kvp5uaNp4ztjRGXXmPzcR0nk4jRD89gLHvH9EYStxZI6nsi3mmWR/LhgIhijb8p63duhE4HuK/RRRjeDQaUsbTG9TMEskY5ZI3p/QM55wlml9F8QJrtwxpaIPI5Fl8lflq+4YcoqgDIBFc6nwubIuiNY4gPJ8s1SQfsfxHSOJpFPZDwi76dxUpthtJrU46fqRvXPzTKoS29WZ5pSAY6p pavel.cizinsky@tcpcloud.eu
+    jjosef:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDkK55PVyvnhW2XiIyDUTWOaW1frsd7g9t8SLRmjtEjKqJOBaRk48bSUfcV2twGcSOq3E2dUikh3URobYIZ6WBEiWrl1e7MYCJJAE+8qzVoskk01mC6tp9HGbsSRKrZTgpjzReM+kN6jffi/P1rSqgeg4U0O99N2aWqdfc7UJPFM09z9nqfB1Gj4HUnBkC1X+di4U3S6W8q62JLgxuK2MAry3xSnPztFVH5OXXbBltdVIxshOHj9i8wyof9iFHGdjFNvB+c5I3RJ2HRmmmHm3zey9iHU7PNIppXKglUFZ0EKIB4LsDjL6xrEjo2A5tfCaVZLNJgP95tdbGEcYQuDv3N jakub.josef@gmail.com
+    mpolreich:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC0N+ds8BGTR+ZQo9NSRGRbjv3T8AbPmtSw2nClXxetRdmHpM/mU7/5iD7qfkCXtNptKeCG/Qk44wlijnAtjztJK1qfvyphHe3etZxLnqhYMm73Yy++yKPE/ywFPFb+7kd0BDy2iZqohZpX3gUi5iDnvXUInHNqqtTv3xFe2kmn3lq5bSRuUMtr61nZ7z/fkX8kNfoGxKrm7bhSo5zq4sjTrj3lk1LKZc1HYji3RwrzBM0z4eyed1BaJyDNtG+eFN4nOnvVn59452AR8SmKJXRErk37rEoQn80xszypzybooFPN5dpdB6u9b4xquFCOD83usb8kEjKY9VIYGuXxEEts1KIF20J+xd8UnZU8d4JL50G8JY8zdNgurR3ZyMD2okuord4cpHF8SVecsAyRV6nuhDxVtF2Xn/RriY02jrLoRPsS+3nIrKt9H8vpQZMYJ+jgEpekZhhVfz4AP3pATzOrWENzNXj5G1bLJs1C9aTtwE27EnKW73XekX/GLsehCwsQ21JvDX8PMxJwLVfqvkRlrc5GILEIVgjZ82Cj6Eens1QobymRAEWuEpZxkPx6u0kGO62ri8zFx8+NYwYDz3mwhHDRT34T/Rvzy/9V9xVjkUQOj9cZ3eYBnC1MffJjx8heHDmSQmUd+99zKa9Hzr74z3AvR3AIgFqmu7kx5fIMew== ubuntu@thinkpad-x1
+    chnyda:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHmLTwDSFslOUVo4ViT0bqVLhSaweuLt0QNWhnIaSPgqWhHOSkdqt3+Tg4l8Vd4O4Z44Yv/rXqhmO5X1AIytNccA6+nJe4Km3JC6QzG6npS3ghtHWDU3DOGgWd5RrULviEDSIj1w1oG8oHxdycGkbfjApAkiDR/xr7NHhTcPhEuvn/q7i1raj4vpNdIrR+cr6XA3l+I4cmaizpjuWaFrag1q24RS7PVEUmcPRSODrkdwFREsrLkIlIgtIoMIIjtEDdk1RU/loiXrNwuVRI3KTLqhheFlHedQd13uzpn66KF6UVlZAm+k2y2jLdEi5IFKD3g6mmWsNH6xSZYVn6d84/XvLjMsS/UL+WHr5xetHNSi3RtQOkCPYphq1KcRAXLwH0dgtDwfyg2F+5ezG3wMsZAqD3KiaGNmDcA6R19Fpjm0S4SXa+QnX5eZcO9DS5cYTjs8F2T9Vsaspvwc0U80M6+JvOlV1PBNJYQhSxdX1Plf2p1MrrRnYhlgMdzCiPSQHsKp3tei8I+bqCvV9iScLAbLxKaW/yWdeuh74oGitTfI4R0h0HMJ1lqK+rT5wtMXyJSvFMK6Zph0GqJf3QHBhzCfs5PIto1pyNdXbI8KzfgTgyo+3gpIPAQ2VD/pf8mOD218UPNQglYWP6wniTq/hVtC2tl3DW53qx5qv10osGmw== chnyda@mirantis.com

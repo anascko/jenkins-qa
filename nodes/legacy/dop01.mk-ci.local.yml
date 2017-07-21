@@ -1,0 +1,11 @@
+classes:
+- system_legacy.linux.system.trusty
+
+parameters:
+  _param:
+    salt_master_host: 10.10.100.81
+    single_address: 10.10.100.8
+  linux:
+    system:
+      name: dop01
+      domain: mk-ci.local

@@ -1,0 +1,24 @@
+parameters:
+  salt:
+    master:
+      environment:
+        prd:
+          formula:
+            apache:
+              source: pkg
+              name: salt-formula-apache
+            graphite:
+              source: pkg
+              name: salt-formula-graphite
+            grafana:
+              source: pkg
+              name: salt-formula-grafana
+            postgresql:
+              source: pkg
+              name: salt-formula-postgresql
+            nodejs:
+              source: pkg
+              name: salt-formula-nodejs
+            statsd:
+              source: pkg
+              name: salt-formula-statsd

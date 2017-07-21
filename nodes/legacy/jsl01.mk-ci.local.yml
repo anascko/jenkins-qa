@@ -1,0 +1,21 @@
+classes:
+- system_legacy.linux.system.xenial
+- system_legacy.jenkins.slave.single
+- system_legacy.aptly.client.publisher
+
+parameters:
+  _param:
+    salt_master_host: 10.10.100.81
+    single_address: 10.10.100.91
+  linux:
+    system:
+      name: jsl01
+      domain: mk-ci.local
+    storage:
+      mount:
+        jenkins:
+          enabled: true
+          device: /dev/vdb
+          path: /var/lib/jenkins
+          file_system: ext4
+          opts: "rw,noatime"

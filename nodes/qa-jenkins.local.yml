@@ -1,0 +1,33 @@
+classes:
+  - cluster.mk_ci_prd.config
+  - service.jenkins.vendor_repo.stable_debian
+  - system_legacy.salt.master.api
+  - system_legacy.jenkins.master.single
+  - service.java.environment
+  - system.jenkins.client.job.deploy.openstack
+  - system.jenkins.client.job.git-mirrors.upstream.pipelines
+  - system.jenkins.client.job.test_pipelines
+#  - cluster.mk_ci_prd.cicd.control.master
+parameters:
+  _param:
+    single_address: 10.20.0.203
+    keepalived_vip_priority: 103
+    linux_system_codename: xenial
+    java_environment_version: "8"
+    java_environment_platform: openjdk
+    jenkins_gerrit_url: "ssh://jenkins-mk@gerrit.mcp.mirantis.net:29418"
+    jenkins_salt_api_url: "http://${_param:salt_master_host}:8000"
+  jenkins:
+    client:
+      enabled: true
+  linux:
+    system:
+      name: 'qa-jenkins'
+      domain: local
+      user:
+        jenkins:
+          name: jenkins
+          enabled: true
+          shell: /bin/bash
+          home: /var/lib/jenkins
+          full_name: 'Jenkins User'

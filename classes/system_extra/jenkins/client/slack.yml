@@ -1,0 +1,7 @@
+parameters:
+  jenkins:
+    client:
+      slack:
+        team_domain: miracloud
+        token: MyE4p0Mt48cT9sAtmkNPYeMt
+        room: mk-ci

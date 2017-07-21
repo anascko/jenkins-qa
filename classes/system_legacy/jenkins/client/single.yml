@@ -1,0 +1,33 @@
+classes:
+  - system_legacy.jenkins.client.credential.gerrit
+  - system_legacy.jenkins.client.credential.salt-mk-ci
+  - system_extra.jenkins.client.credential.salt-qa
+  - system_extra.jenkins.client.credential.openstack-tcpisek
+  - system_extra.jenkins.client.credential.dockerhub
+  - system_extra.jenkins.client.credential.launchpad
+  - system_extra.jenkins.client.credential.artifactory
+  - system_extra.jenkins.client.artifactory
+  - system_extra.jenkins.client.node
+  - system_extra.jenkins.client.security
+  - system_extra.jenkins.client.slack
+  - system_extra.jenkins.client.smtp
+  - system.jenkins.client.approved_scripts
+parameters:
+  jenkins:
+    client:
+      enabled: True
+      master:
+        host: 10.10.100.82
+        port: 8080
+        protocol: http
+        username: jenkins-mk
+        password: Jr9TqhzmwNu5TPEu
+      security:
+        ldap:
+          server: ldap-scc.scc.mirantis.net
+          root_dn: dc=mirantis,dc=net
+      jenkins:
+      node:
+        master:
+          num_executors: 4
+          node_mode: Exclusive

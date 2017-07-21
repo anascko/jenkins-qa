@@ -1,0 +1,22 @@
+classes:
+- system_legacy.linux.system.xenial
+- system_legacy.aptly.server.single
+- system_legacy.nginx.server.site.aptly
+- system_legacy.nginx.server.site.images
+
+parameters:
+  _param:
+    salt_master_host: 10.10.100.81
+    single_address: 10.10.100.85
+  linux:
+    system:
+      name: apt01
+      domain: mk-ci.local
+    storage:
+      mount:
+        srv:
+          enabled: true
+          device: /dev/vdb
+          path: /srv
+          file_system: ext4
+          opts: "rw,noatime"

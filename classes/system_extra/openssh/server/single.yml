@@ -1,0 +1,38 @@
+classes:
+- service.openssh.server
+- system_extra.openssh.server.team.tcpcloud
+parameters:
+  linux:
+    system:
+      user:
+        root:
+          enabled: true
+          name: root
+          home: /root
+  openssh:
+    server:
+      enabled: true
+      permit_root_login: true
+      password_auth: false
+      x11:
+        forwarding: false
+      print_motd: true
+      print_lastlog: false
+      user:
+        root:
+          enabled: true
+          purge: true
+          public_keys:
+          - ${public_keys:tcpadmin}
+          user: ${linux:system:user:root}
+  public_keys:
+    tcpadmin:
+      key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDffYMyCdTdG8tx4Rr22FjC7pw8Ki492Lqfl9jfmbCH6kOLd9+ACMqlGrg1tWaG9WBcbNIbmoJdDQY49O2ont6DyyJJJVkAE1up5dKABnsoo7Bba6aBCiCWDwNjmDJTSf6r/r+IGHvYPjpJIV1BBhWEs4vZYg8y5N7He4+Uid0GP3RTgTEeHJwKdL5tQ+ycshUaqAnPuoiFiZdD6Z7cf4iUIN1v5qiyNKcJ2q+N6CAoSNIn//fSAMgJtLckF36He4KVfq4CjS8Pcd01gwzjmOLUyJgLHrjSWgOQeN4m8S9ldt/OLrtwD4wKN/TmWYSW4UYZr9Wd/nnViK83Ys15oqUmWxm/BEgx6+M5WpFQoAnrn4J9LkGcahb2TX28s5QkLUD3yUrxNkiFRbIBnsFJGpurX2S18ZkGTEJjpKgFKF6aLkdH7opcLGDP50agpZmncoFeQwHCjlwFIHGbzPDu0LjpwEA8ksmAdAWMJx2BM0AVtyjFSJezZ6HmaNHkWCNXzNb6SJ28yezp+Dg+QjPgS1xZ8yaK4nkHbASjiQWBZOo50yrjlLunGUmQWuCDuMATi3kF6etTRDc45fTkSeiG+oCu2Ec+DAomax174bXbTkII1cLs9aFUDgVE1IV5iUJRXwQiyhAiYsVZTMVK4+7C0uDunJyQsuq5p2zdeykBtxRNdw==
+  iptables:
+    service:
+      chain:
+        INPUT:
+          rules:
+            - destination_port: 22
+              protocol: tcp
+              jump: ACCEPT

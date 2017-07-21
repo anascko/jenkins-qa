@@ -1,0 +1,11 @@
+classes:
+  # Trusty
+  - system_legacy.aptly.server.repo.ubuntu.trusty.extra
+  - system_legacy.aptly.server.repo.ubuntu.trusty.opencontrail
+  - system_legacy.aptly.server.repo.ubuntu.trusty.openstack
+  - system_legacy.aptly.server.repo.ubuntu.trusty.salt
+  # Xenial
+  - system_legacy.aptly.server.repo.ubuntu.xenial.extra
+  - system_legacy.aptly.server.repo.ubuntu.xenial.opencontrail
+  - system_legacy.aptly.server.repo.ubuntu.xenial.openstack
+  - system_legacy.aptly.server.repo.ubuntu.xenial.salt

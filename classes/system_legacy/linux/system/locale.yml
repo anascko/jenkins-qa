@@ -1,0 +1,10 @@
+parameters:
+  linux:
+    system:
+      timezone: UTC
+      locale:
+        en_US.UTF-8:
+          enabled: true
+          default: true
+        cs_CZ.UTF-8:
+          enabled: true

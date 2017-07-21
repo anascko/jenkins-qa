@@ -1,0 +1,58 @@
+classes:
+  - service.linux.system
+  - service.openssh.client
+  - service.ntp.client
+  - service.salt.minion.master
+  - system_legacy.linux.system.prompt
+  - system_legacy.linux.system.locale
+  - system_legacy.linux.system.motd.dynamic
+  - system_legacy.linux.system.haveged
+  - system_extra.openssh.server.single
+  - system_legacy.linux.system.repo.ubuntu.trusty
+  - system_extra.postfix.server.relay
+
+parameters:
+  _param:
+    dist_version: trusty
+    java_environment_version: "7"
+    java_environment_platform: openjdk
+  linux:
+    system:
+      package:
+        ca-certificates-cloudlab:
+          version: latest
+        cloud-init:
+          version: purged
+      console:
+        tty1:
+          autologin: root
+      kernel:
+        sysctl:
+          vm.swappiness: 0
+          # Workaround CVE-2016-5696, fixed in linux 4.7
+          net.ipv4.tcp_challenge_ack_limit: 999999999
+      rc:
+        local: |
+          #!/bin/bash -e
+          find /sys/devices -name scheduler | grep -v -e /ram -e /loop | while read i; do echo deadline > $i || true; done
+          exit 0
+    network:
+      resolv:
+        search:
+          - mirantis.net
+        domain: mirantis.net
+        dns:
+          - 172.18.176.4
+          - 8.8.8.8
+  iptables:
+    service:
+      chain:
+        INPUT:
+          rules:
+            - in_interface: lo
+              jump: ACCEPT
+            - connection_state: RELATED,ESTABLISHED
+              match: state
+              jump: ACCEPT
+            - protocol: icmp
+              jump: ACCEPT

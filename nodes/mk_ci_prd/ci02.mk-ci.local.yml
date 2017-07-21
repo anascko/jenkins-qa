@@ -1,0 +1,12 @@
+classes:
+  - cluster.mk_ci_prd.cicd.control.slave
+parameters:
+  _param:
+    single_address: 10.0.175.69
+    docker_swarm_role: worker
+    keepalived_vip_priority: 102
+    linux_system_codename: xenial
+  linux:
+    system:
+      name: ci02
+      domain: mk-ci.local

@@ -1,0 +1,50 @@
+parameters:
+  _param:
+    jenkins_server_host: jenkins-mk.vm.mirantis.net
+    jenkins_server_address: 10.10.100.82
+
+  linux:
+    network:
+      host:
+        jenkins:
+          address: ${_param:jenkins_server_address}
+          names:
+            - ${_param:jenkins_server_host}
+            - jenkins
+    system:
+      ca_certificates:
+        devcloud: |
+          -----BEGIN CERTIFICATE-----
+          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
+          1vpvhwI=
+          -----END CERTIFICATE-----

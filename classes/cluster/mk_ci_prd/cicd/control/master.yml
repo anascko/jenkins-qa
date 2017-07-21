@@ -1,0 +1,59 @@
+classes:
+  - cluster.mk_ci_prd.cicd.control
+ # - system.docker.swarm.master
+  # Services
+ # - system.docker.client
+ # - system.aptly.server.docker
+ # - system.aptly.client.publisher
+  # Jenkins
+  - system.jenkins.master.config
+  - system.jenkins.client
+  - system.jenkins.client.security.ldap
+  - system.jenkins.client.credential.gerrit
+  - system.jenkins.client.credential.salt
+ # - system_extra.jenkins.client.artifactory
+  - system_extra.jenkins.client.node
+  - system_extra.jenkins.client.security
+ # - system_extra.jenkins.client.slack
+ # - system_extra.jenkins.client.smtp
+ # - system_extra.jenkins.client.credential.salt-qa
+ # - system_extra.jenkins.client.credential.openstack-tcpisek
+ # - system_extra.jenkins.client.credential.launchpad
+ # - system_extra.jenkins.client.credential.dockerhub
+ # - system_extra.jenkins.client.credential.artifactory
+  # Deploy jobs
+#  - system.jenkins.client.job.debian
+#  - system.jenkins.client.job.debian.packages.testing
+#  - system.jenkins.client.job.deploy
+#  - system.jenkins.client.job.opencontrail
+#  - system.jenkins.client.job.salt-formulas
+#  - system.jenkins.client.job.salt-models
+#  - system_extra.jenkins.client.job.salt-models.tests
+#  - system_extra.jenkins.client.job.salt-models.git-mirrors
+#  - system.jenkins.client.job.aptly
+  # Build images jobs
+#  - system.jenkins.client.job.image.centos
+#  - system.jenkins.client.job.image.debian
+#  - system.jenkins.client.job.image.debian
+#  - system.jenkins.client.job.image.ubuntu
+  # Build docker images jobs
+#  - system.jenkins.client.job.docker
+#  - system.jenkins.client.job.docker.build-images
+#  - system.jenkins.client.job.docker.oss
+#  - system.jenkins.client.job.docker.testing
+  # Gating jobs
+#  - system.jenkins.client.job.gating
+  # Others
+ # - system.jenkins.client.job.test_pipelines
+ # - system.jenkins.client.job.kill_stuck_jobs
+ # - system.jenkins.client.job.oss
+ # - system.jenkins.client.job.git-mirrors.upstream.oss
+ # - system.jenkins.client.job.git-mirrors.upstream.pipelines
+ # - system.jenkins.client.job.git-mirrors.upstream.templates
+ # - system.jenkins.client.job.git-mirrors.downstream.templates
+ # - system.jenkins.client.job.git-mirrors.upstream.docker_images
+ # - system.jenkins.client.job.git-mirrors.downstream.docker_images
+ # - system.jenkins.client.job.git-mirrors.upstream.debian-packages
+ # - system.jenkins.client.job.git-mirrors.downstream.debian-packages
+ # - system.jenkins.client.job.git-mirrors.upstream.salt_formulas_utils
+ # - system.jenkins.client.job.git-mirrors.downstream.salt_formulas_utils

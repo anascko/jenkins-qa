@@ -1,0 +1,27 @@
+classes:
+  - system_legacy.nginx.server.single
+parameters:
+  nginx:
+    server:
+      extras: true
+      user:
+        jenkins:
+          enabled: true
+          password: eyoocaiG3ADireK3Eef8gae1roh5oox0
+          htpasswd: webdav_images.htpasswd
+      site:
+        webdav_images:
+          enabled: true
+          root: /srv/aptly/public/images
+          type: nginx_static
+          name: webdav_images
+          client_max_body_size: 5G
+          host:
+            name: ${_param:aptly_server_host}
+            port: 8088
+          webdav:
+            methods: "PUT DELETE MKCOL COPY MOVE"
+            ext_methods: "PROPFIND OPTIONS"
+          auth:
+            engine: basic
+            htpasswd: webdav_images.htpasswd

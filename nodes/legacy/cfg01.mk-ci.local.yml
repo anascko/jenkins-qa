@@ -1,0 +1,36 @@
+classes:
+- system_legacy.linux.system.xenial
+- system_extra.openssh.client.salt
+- system.salt.master.pkg
+- system_legacy.salt.minion.master
+- system_legacy.salt.master.single
+- system_legacy.salt.master.api
+- system_legacy.salt.master.formula.linux
+- system_legacy.salt.master.formula.saltstack
+- system_legacy.salt.master.formula.aptly
+- system_legacy.salt.master.formula.jenkins
+- system_legacy.salt.master.formula.mailserver
+- system_legacy.salt.master.formula.owncloud
+- system_legacy.salt.master.formula.logging
+- system_legacy.salt.master.formula.rabbitmq
+- system_legacy.salt.master.formula.helpdesk
+- system_legacy.salt.master.formula.taiga
+- system_legacy.salt.master.formula.web
+- system_legacy.salt.master.formula.sensu
+- system_legacy.salt.master.formula.graphite
+- system_legacy.reclass.storage.salt
+
+parameters:
+  _param:
+    linux_system_codename: xenial
+    reclass_data_repository: ssh://jenkins-mk@gerrit.mcp.mirantis.net:29418/salt-models/mk-ci.git
+    reclass_data_revision: master
+    single_address: 10.10.100.81
+    salt_master_host: 127.0.0.1
+    reclass_config_master: ${_param:single_address}
+    salt_master_base_environment: prd
+    salt_api_password_hash: "$6$KbmmFKTm$LiN6KHbXxRrclJiXdKRDLDDG9CihfnM/vYVZb9YMhAKgYlq9H2AeUZeLAEqHYh2Nm7QKIY6YopjwmCACKPq.h."
+  linux:
+    system:
+      name: cfg01
+      domain: mk-ci.local

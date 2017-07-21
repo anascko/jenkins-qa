@@ -1,0 +1,80 @@
+applications:
+  - jenkins
+
+classes:
+  - system_legacy.jenkins.common
+  - system.jenkins.slave.docker
+  - system.jenkins.slave.debian
+  - system.jenkins.slave.ruby
+  - service.java.environment
+  - system_legacy.docker.host.single
+  - system.docker.client
+  - service.iptables.server
+
+parameters:
+  _param:
+    jenkins_master_host: "jenkins-mk.vm.mirantis.net"
+  docker:
+    host:
+      options:
+        bip: 172.31.255.1/24
+  java:
+    environment:
+      headless: true
+  jenkins:
+    slave:
+      enabled: true
+      pkgs: false
+      sudo: false
+      scripts: []
+      master:
+        host: ${_param:jenkins_server_address}
+        port: 8080
+        protocol: http
+      user:
+        name: jenkins-mk
+        password: Jr9TqhzmwNu5TPEu
+  # ensure FORWARD chain to be ACCEPT due to docker 1.13 sets chain to DROP https://github.com/docker/docker/pull/28257
+  iptables:
+    service:
+      enabled: true
+      chain:
+        FORWARD:
+          policy: ACCEPT
+  linux:
+    system:
+      package:
+        unzip:
+          version: latest
+        myrepos:
+          version: latest
+        pbzip2:
+          version: latest
+        qemu:
+          version: latest
+        libvirt-bin:
+          version: latest
+        build-essential:
+          version: latest
+        python-dev:
+          version: latest
+        python-virtualenv:
+          version: latest
+        libffi-dev:
+          version: latest
+        libssl-dev:
+          version: latest
+        devscripts:
+          version: latest
+        vagrant:
+          version: latest
+      user:
+        jenkins:
+          enabled: true
+          name: jenkins
+          home: /var/lib/jenkins
+          sudo: false
+          groups:
+            - docker
+            - kvm
+            - libvirtd

@@ -1,0 +1,21 @@
+classes:
+- system.linux.system.single
+- system.linux.system.haveged
+- system.linux.system.prompt.production
+- system.linux.system.motd.dynamic
+#- system_extra.openssh.server.single
+#- system_extra.postfix.server.relay
+
+parameters:
+  _param:
+    cluster_domain: mk-ci.local
+    cluster_name: mk_ci_prd
+    admin_email: autobuild@mirantis.com
+    salt_master_host: 10.20.0.203
+    salt_api_password: eingie5vooyohhe6oCongaithaedo4Ee
+    salt_api_password_hash: "$6$KbmmFKTm$LiN6KHbXxRrclJiXdKRDLDDG9CihfnM/vYVZb9YMhAKgYlq9H2AeUZeLAEqHYh2Nm7QKIY6YopjwmCACKPq.h."
+
+  linux:
+    network:
+      # Ensure consistent /etc/hosts
+      purge_hosts: true

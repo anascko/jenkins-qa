@@ -1,0 +1,5 @@
+classes:
+  # Trusty
+  - system_legacy.aptly.server.mirror.ubuntu.trusty.salt
+  # Xenial
+  - system_legacy.aptly.server.mirror.ubuntu.xenial.salt

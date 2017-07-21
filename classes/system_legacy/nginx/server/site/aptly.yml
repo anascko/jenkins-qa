@@ -1,0 +1,25 @@
+classes:
+  - system_legacy.nginx.server.single
+parameters:
+  nginx:
+    server:
+      site:
+        aptly_server:
+          enabled: true
+          type: aptly
+          name: server
+          host:
+            name: ${_param:aptly_server_host}
+        aptly_api:
+          enabled: true
+          check: false
+          type: nginx_proxy
+          name: aptly_api
+          proxy:
+            host: 127.0.0.1
+            port: 8080
+            protocol: http
+            size: 1G
+          host:
+            name: ${_param:aptly_server_host}
+            port: 8081

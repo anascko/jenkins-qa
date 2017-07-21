@@ -1,0 +1,21 @@
+parameters:
+  salt:
+    master:
+      environment:
+        prd:
+          formula:
+            glusterfs:
+              source: pkg
+              name: salt-formula-glusterfs
+            mysql:
+              source: pkg
+              name: salt-formula-mysql
+            apache:
+              source: pkg
+              name: salt-formula-apache
+            memcached:
+              source: pkg
+              name: salt-formula-memcached
+            owncloud:
+              source: pkg
+              name: salt-formula-owncloud

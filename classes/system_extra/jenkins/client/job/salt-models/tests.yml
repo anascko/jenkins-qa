@@ -1,0 +1,96 @@
+classes:
+  - system.jenkins.client.job.salt-models.tests
+parameters:
+  jenkins:
+    client:
+      job_template:
+        test_salt_model:
+          jobs:
+            - name: aeg
+              extra_formulas: ""
+              formulas_src: "pkg"
+              formulas_revision: "stable"
+              branch: "(.*?)"
+              config_node_name: "cfg01"
+            - name: att-cicd
+              extra_formulas: ""
+              formulas_src: "pkg"
+              formulas_revision: "stable"
+              branch: "(.*?)"
+              config_node_name: "cfg01"
+            - name: mall
+              extra_formulas: ""
+              formulas_src: "pkg"
+              formulas_revision: "stable"
+              branch: "(.*?)"
+              config_node_name: "cfg01"
+            - name: mcp-baremetal-lab
+              extra_formulas: "elasticsearch kibana"
+              formulas_src: "pkg"
+              formulas_revision: "stable"
+              branch: "master$"
+              config_node_name: "cfg01"
+            - name: mcp-virtual-lab
+              extra_formulas: "prometheus telegraf"
+              formulas_src: "pkg"
+              formulas_revision: "nightly"
+              branch: "master$"
+              config_node_name: "cfg01"
+            - name: mk-ci
+              extra_formulas: ""
+              formulas_src: "pkg"
+              formulas_revision: "stable"
+              branch: "master$"
+              config_node_name: "cfg01"
+            - name: qa
+              extra_formulas: ""
+              formulas_src: "pkg"
+              formulas_revision: "stable"
+              branch: "master$"
+              config_node_name: "cfg01"
+            - name: quickplay
+              extra_formulas: ""
+              formulas_src: "pkg"
+              formulas_revision: "stable"
+              branch: "(.*?)"
+              config_node_name: "cfg01"
+            - name: ril-jamnagar
+              extra_formulas: ""
+              formulas_src: "pkg"
+              formulas_revision: "stable"
+              branch: "(.*?)"
+              config_node_name: "cfg01"
+            - name: slovaktelekom
+              extra_formulas: ""
+              formulas_src: "pkg"
+              formulas_revision: "stable"
+              branch: "(.*?)"
+              config_node_name: "cfg01"
+            - name: stacklight
+              extra_formulas: ""
+              formulas_src: "pkg"
+              formulas_revision: "stable"
+              branch: "master$"
+              config_node_name: "cfg01"
+            - name: statens
+              extra_formulas: ""
+              formulas_src: "pkg"
+              formulas_revision: "stable"
+              branch: "(.*?)"
+              config_node_name: "cfg01"
+            - name: training
+              extra_formulas: ""
+              formulas_src: "pkg"
+              formulas_revision: "stable"
+              branch: "master$"
+              config_node_name: "cfg01"
+            - name: vf-cloudstore
+              extra_formulas: ""
+              formulas_src: "pkg"
+              formulas_revision: "stable"
+              branch: "(.*?)"
+              config_node_name: "cfg01"
+        test_system_reclass:
+          jobs:
+            - name: reclass-system
+              clusters: "mcp-baremetal-lab,mcp-virtual-lab,qa,stacklight,training"

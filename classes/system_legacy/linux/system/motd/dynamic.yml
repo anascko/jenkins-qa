@@ -1,0 +1,19 @@
+parameters:
+  linux:
+    system:
+      motd:
+        - warning: |
+            #!/bin/sh
+            printf "WARNING: This is Mirantis network.\n"
+            printf "  Unauthorized access is strictly prohibited.\n"
+            printf "\n"
+        - info: |
+            #!/bin/sh
+            printf -- "--[tcp cloud]-----------------------------------------\n"
+            printf " Hostname     |  $(hostname)\n"
+            printf " Domain       |  $(hostname -d)\n"
+            printf " System       |  %s\n" "$(lsb_release -s -d)"
+            printf " Kernel       |  %s\n" "$(uname -r)"
+            printf " Uptime       |  %s\n" "$(uptime -p)"
+            printf " Load Average |  %s\n" "$(cat /proc/loadavg | awk '{print $1", "$2", "$3}')"
+            printf -- "------------------------------------------------------\n"

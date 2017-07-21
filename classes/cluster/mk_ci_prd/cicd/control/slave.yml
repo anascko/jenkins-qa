@@ -1,0 +1,4 @@
+classes:
+  - cluster.mk_ci_prd.cicd.control
+  - system.docker.swarm.manager
+  - system.docker.client

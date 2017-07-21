@@ -1,0 +1,10 @@
+parameters:
+  salt:
+    master:
+      environment:
+        prd:
+          formula:
+            rabbitmq:
+              source: pkg
+              name: salt-formula-rabbitmq
+

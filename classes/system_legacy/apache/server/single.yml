@@ -1,0 +1,7 @@
+classes:
+  - service.apache.server.single
+
+parameters:
+  apache:
+    server:
+      default_mpm: worker

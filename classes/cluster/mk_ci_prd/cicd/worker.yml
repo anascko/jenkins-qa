@@ -1,0 +1,7 @@
+classes:
+  - cluster.mk_ci_prd.cicd
+  - system.linux.system.single
+ # - system.jenkins.slave.docker
+ # - system.jenkins.slave.debian
+  - system.jenkins.slave.ruby
+ # - system.aptly.client.publisher

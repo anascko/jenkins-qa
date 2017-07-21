@@ -1,0 +1,9 @@
+parameters:
+  linux:
+    system:
+      repo:
+        tcpcloud:
+          source: "deb [arch=amd64] http://apt.tcpcloud.eu/nightly/ trusty main security extra tcp tcp-salt"
+          architectures: amd64
+          default: true
+          key_url: "http://apt.tcpcloud.eu/public.gpg"

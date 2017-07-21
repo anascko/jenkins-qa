@@ -1,0 +1,15 @@
+parameters:
+  salt:
+    master:
+      environment:
+        prd:
+          formula:
+            aptly:
+              source: pkg
+              name: salt-formula-aptly
+            nginx:
+              source: pkg
+              name: salt-formula-nginx
+#            rsync:
+#              source: pkg
+#              name: salt-formula-rsync

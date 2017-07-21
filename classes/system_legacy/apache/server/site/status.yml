@@ -1,0 +1,16 @@
+classes:
+  - system_legacy.apache.server.single
+
+parameters:
+  apache:
+    server:
+      modules:
+        - status
+      site:
+        server_status:
+          enabled: true
+          type: stats
+          name: server_status
+          host:
+            name: 127.0.0.1
+            port: 80

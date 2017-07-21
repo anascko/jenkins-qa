@@ -1,0 +1,67 @@
+applications:
+  - jenkins
+
+classes:
+  - system.jenkins.master.config
+  - system_legacy.jenkins.common
+  - system_extra.openssh.client.jenkins
+  - service.git.client
+  - service.java.environment
+  - service.python.environment
+
+parameters:
+  jenkins:
+    master:
+      enabled: true
+      no_config: true
+      http:
+        network: any
+        port: 8080
+        protocol: http
+      user:
+        admin:
+          api_token: gut6eitahN3ieno1Taqu2wi6gahtheet
+          email: autobuild@tcpcloud.eu
+          password: vo0reey8Ej0phaiLim2ahceiGu0Ai5ie
+      plugins:
+        - name: slack
+        - name: extended-choice-parameter
+        - name: rebuild
+        - name: test-stability
+        - name: build-blocker-plugin
+        - name: heavy-job
+        - name: workflow-cps
+        - name: workflow-remote-loader
+        - name: workflow-scm-step
+        - name: docker-workflow
+        - name: gerrit-trigger
+        - name: pipeline-utility-steps
+        - name: discard-old-build
+        - name: ansicolor
+        - name: timestamper
+        - name: build-user-vars-plugin
+        - name: description-setter
+        - name: build-monitor-plugin
+        - name: categorized-view
+        - name: monitoring
+        - name: matrix-auth
+        - name: artifactory
+  linux:
+    system:
+      user:
+        jenkins:
+          enabled: true
+          name: jenkins
+          home: /var/lib/jenkins
+          sudo: false
+  #  storage:
+  #    mount:
+  #      jenkins:
+  #        enabled: true
+  #        device: /dev/vdb
+  #        path: /var/lib/jenkins
+  #        file_system: ext4
+  #        opts: "rw,noatime"
+  java:
+    environment:
+      headless: true

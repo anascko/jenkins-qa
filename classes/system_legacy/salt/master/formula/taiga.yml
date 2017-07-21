@@ -1,0 +1,21 @@
+parameters:
+  salt:
+    master:
+      environment:
+        prd:
+          formula:
+            taiga:
+              source: pkg
+              name: salt-formula-taiga
+            nginx:
+              source: pkg
+              name: salt-formula-nginx
+            postgresql:
+              source: pkg
+              name: salt-formula-postgresql
+            supervisor:
+              source: pkg
+              name: salt-formula-supervisor
+            redis:
+              source: pkg
+              name: salt-formula-redis
