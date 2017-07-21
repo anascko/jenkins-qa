@@ -1,5 +1,3 @@
-# jenkins-qa
-mk-ci 
 Change ip
 Install required salt-formulas-*
 Add system reclass
