@@ -11,16 +11,17 @@ classes:
   - system.jenkins.client.security.ldap
   - system.jenkins.client.credential.gerrit
   - system.jenkins.client.credential.salt
+  - system_extra.jenkins.client.credential.openstack-devcloud
  # - system_extra.jenkins.client.artifactory
   - system_extra.jenkins.client.node
   - system_extra.jenkins.client.security
  # - system_extra.jenkins.client.slack
  # - system_extra.jenkins.client.smtp
- # - system_extra.jenkins.client.credential.salt-qa
+  - system_extra.jenkins.client.credential.salt-qa
  # - system_extra.jenkins.client.credential.openstack-tcpisek
  # - system_extra.jenkins.client.credential.launchpad
- # - system_extra.jenkins.client.credential.dockerhub
- # - system_extra.jenkins.client.credential.artifactory
+  - system_extra.jenkins.client.credential.dockerhub
+  - system_extra.jenkins.client.credential.artifactory
   # Deploy jobs
 #  - system.jenkins.client.job.debian
 #  - system.jenkins.client.job.debian.packages.testing
@@ -29,6 +30,7 @@ classes:
 #  - system.jenkins.client.job.salt-formulas
 #  - system.jenkins.client.job.salt-models
 #  - system_extra.jenkins.client.job.salt-models.tests
+  - system_extra.jenkins.client.job.devops
 #  - system_extra.jenkins.client.job.salt-models.git-mirrors
 #  - system.jenkins.client.job.aptly
   # Build images jobs

@@ -1,0 +1,9 @@
+classes:
+  - system.jenkins.client.job.devops
+parameters:
+  jenkins:
+    client:
+      job_template:
+        devops_common:
+          jobs:
+            - name: aio-1

@@ -3,10 +3,10 @@ classes:
 parameters:
   _param:
     # CI/CD control infrastructure
-    control_node01_address: 10.20.0.203
+    control_node01_address: 172.18.195.70
     control_node02_address: 10.0.175.69
     control_node03_address: 10.0.175.67
-    control_vip_address: 10.20.0.203
+    control_vip_address: 172.18.195.70
     #control_vip_address_local: 10.0.175.200
     control_public_host: ci.${_param:cluster_domain}
     jenkins_slave_user: jenkins-mk

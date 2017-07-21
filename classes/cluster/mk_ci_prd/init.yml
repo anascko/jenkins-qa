@@ -11,7 +11,7 @@ parameters:
     cluster_domain: mk-ci.local
     cluster_name: mk_ci_prd
     admin_email: autobuild@mirantis.com
-    salt_master_host: 10.20.0.203
+    salt_master_host: 172.18.195.70
     salt_api_password: eingie5vooyohhe6oCongaithaedo4Ee
     salt_api_password_hash: "$6$KbmmFKTm$LiN6KHbXxRrclJiXdKRDLDDG9CihfnM/vYVZb9YMhAKgYlq9H2AeUZeLAEqHYh2Nm7QKIY6YopjwmCACKPq.h."
 

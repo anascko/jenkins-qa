@@ -17,7 +17,7 @@ parameters:
           proxy:
             initial_pooled: false
             host: 127.0.0.1
-            port: 8080
+            port: 8090
             protocol: http
             nocanon: true
             preservehost: true

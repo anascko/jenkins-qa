@@ -7,4 +7,4 @@ parameters:
         password: "Boo1aVieseidae2vainoph3jaequ4jah"
         port: 465
         ssl: true
-        admin_email: Mirantis MK Jenkins <jenkins-mk@cloudlab.cz>
+        admin_email: Mirantis MK Jenkins <ovoshchana@mirantis.com>

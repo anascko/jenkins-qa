@@ -3,7 +3,7 @@ classes:
   - cluster.mk_ci_prd.cicd.control.master
 parameters:
   _param:
-    single_address: 10.20.0.203
+    single_address: 172.18.195.70
     keepalived_vip_priority: 103
     linux_system_codename: xenial
   linux:

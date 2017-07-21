@@ -1,7 +1,7 @@
 parameters:
   _param:
-    jenkins_server_host: jenkins-mk.vm.mirantis.net
-    jenkins_server_address: 10.10.100.82
+    jenkins_server_host: mc0n1-kha.kha.mirantis.net
+    jenkins_server_address: 172.18.195.70
 
   linux:
     network:

@@ -7,7 +7,7 @@ classes:
 #  - system_extra.openssh.client.salt
 parameters:
   _param:
-    reclass_data_repository: https://gerrit.mcp.mirantis.net/salt-models/mk-ci
+    reclass_data_repository: https://github.com/anascko/jenkins-qa.git
     reclass_data_revision: master
     reclass_config_master: ${_param:salt_master_host}
     salt_master_base_environment: prd

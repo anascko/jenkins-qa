@@ -29,7 +29,7 @@ parameters:
       scripts: []
       master:
         host: ${_param:jenkins_server_address}
-        port: 8080
+        port: 8090
         protocol: http
       user:
         name: jenkins-mk

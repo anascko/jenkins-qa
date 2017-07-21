@@ -16,7 +16,7 @@ parameters:
       no_config: true
       http:
         network: any
-        port: 8080
+        port: 8090
         protocol: http
       user:
         admin:
