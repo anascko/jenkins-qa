@@ -26,52 +26,52 @@ classes:
 #  - system.keepalived.cluster.instance.cicd_control_vip
 
   # HAProxy
-  - cluster.mk_ci_prd.cicd.control.ssl.jenkins
-  - system.haproxy.proxy.single
-  - system.haproxy.proxy.listen.cicd.aptly
-  - system.haproxy.proxy.listen.cicd.jenkins
-  - system.haproxy.proxy.listen.docker.registry
-  - system.haproxy.proxy.listen.docker.visualizer
-  - system.haproxy.proxy.listen.stats
+#  - cluster.mk_ci_prd.cicd.control.ssl.jenkins
+#  - system.haproxy.proxy.single
+#  - system.haproxy.proxy.listen.cicd.aptly
+#  - system.haproxy.proxy.listen.cicd.jenkins
+#  - system.haproxy.proxy.listen.docker.registry
+#  - system.haproxy.proxy.listen.docker.visualizer
+#  - system.haproxy.proxy.listen.stats
 parameters:
   _param:
-    cluster_node01_name: ci01
-    cluster_node01_address: ${_param:control_node01_address}
-    cluster_node02_name: ci02
-    cluster_node02_address: ${_param:control_node02_address}
-    cluster_node03_name: ci03
-    cluster_node03_address: ${_param:control_node03_address}
+#    cluster_node01_name: ci01
+#    cluster_node01_address: ${_param:control_node01_address}
+#    cluster_node02_name: ci02
+#    cluster_node02_address: ${_param:control_node02_address}
+#    cluster_node03_name: ci03
+#    cluster_node03_address: ${_param:control_node03_address}
 
-    keepalived_vip_virtual_router_id: 180
-    keepalived_vip_priority: 103
-    keepalived_vip_password: password
-    keepalived_vip_interface: eth0
+#    keepalived_vip_virtual_router_id: 180
+#    keepalived_vip_priority: 103
+#    keepalived_vip_password: password
+#    keepalived_vip_interface: eth0
 
-    cluster_vip_address: ${_param:control_vip_address}
-    cluster_vip_address_local: ${_param:control_vip_address_local}
-    cluster_public_host: ${_param:control_public_host}
-    glusterfs_service_host: ${_param:cluster_vip_address}
+#    cluster_vip_address: ${_param:control_vip_address}
+#    cluster_vip_address_local: ${_param:control_vip_address_local}
+#    cluster_public_host: ${_param:control_public_host}
+#    glusterfs_service_host: ${_param:cluster_vip_address}
 
     # Haproxy SSL configuration
-    haproxy_jenkins_ssl:
-      enabled: true
-      key: ${_param:ssl_mirantis_jenkins_key}
-      cert: ${_param:ssl_mirantis_jenkins_cert}
-      chain: ${_param:ssl_mirantis_jenkins_chain}
-    haproxy_bind_address: ${_param:cluster_vip_address}
-    haproxy_jenkins_bind_port: 443
+#    haproxy_jenkins_ssl:
+#      enabled: true
+#      key: ${_param:ssl_mirantis_jenkins_key}
+#      cert: ${_param:ssl_mirantis_jenkins_cert}
+#      chain: ${_param:ssl_mirantis_jenkins_chain}
+#    haproxy_bind_address: ${_param:cluster_vip_address}
+#    haproxy_jenkins_bind_port: 443
 
     # Docker images and versions
-    docker_image_aptly:
-      api: tcpcloud/aptly-api
-      public: tcpcloud/aptly-public
-    docker_image_registry: registry:2
-    docker_image_jenkins: tcpcloud/jenkins
-    docker_registry_http_secret: avahfequachu3Oogaid2gai6Tei9sohd
+#    docker_image_aptly:
+#      api: tcpcloud/aptly-api
+#      public: tcpcloud/aptly-public
+#    docker_image_registry: registry:2
+#    docker_image_jenkins: tcpcloud/jenkins
+#    docker_registry_http_secret: avahfequachu3Oogaid2gai6Tei9sohd
 
     # CI/CD service setup
     # Jenkins
-    jenkins_master_port: ${_param:haproxy_jenkins_bind_port}
+#    jenkins_master_port: 
     jenkins_client_user: jenkins-mk
     jenkins_client_password: Jr9TqhzmwNu5TPEu
     jenkins_admin_email: ${_param:admin_email}
@@ -315,14 +315,14 @@ parameters:
  #         addresses:
  #           - ${_param:cluster_vip_address_local}
  #           - ${_param:cluster_vip_address}
-  haproxy:
-    proxy:
-      enabled: true
-  linux:
-    system:
-      package:
-        ca-certificates-java:
-          version: latest
+#  haproxy:
+#    proxy:
+#      enabled: true
+#  linux:
+#    system:
+#      package:
+#        ca-certificates-java:
+#          version: latest
   #  storage:
   #    mount:
   #      glusterfs:

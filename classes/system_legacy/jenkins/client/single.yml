@@ -7,7 +7,7 @@ classes:
   - system_extra.jenkins.client.credential.launchpad
   - system_extra.jenkins.client.credential.artifactory
   - system_extra.jenkins.client.artifactory
-  - system_extra.jenkins.client.node
+# - system_extra.jenkins.client.node
   - system_extra.jenkins.client.security
   - system_extra.jenkins.client.slack
   - system_extra.jenkins.client.smtp

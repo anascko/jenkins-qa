@@ -3,17 +3,15 @@ classes:
   - service.jenkins.vendor_repo.stable_debian
   - system_legacy.salt.master.api
   - system_legacy.jenkins.master.single
+  - system_legacy.jenkins.client.single
   - service.java.environment
   - system.jenkins.client.job.deploy.openstack
-#  - system.jenkins.client.job.git-mirrors.upstream.pipelines
   - system_extra.jenkins.client.job.devops
-#  - system.jenkins.client.job.git-mirrors.downstream.salt_formulas_utils
-#  - system.jenkins.client.job.test_pipelines
-#  - cluster.mk_ci_prd.cicd.control.master
-#   - system_extra.jenkins.openstack-devcloud
+  - cluster.mk_ci_prd.cicd.control
   - system_extra.jenkins.client.credential.openstack-devcloud
   - system_extra.jenkins.client.credential.salt-qa
   - system_extra.jenkins.client.credential.artifactory
+  - system.jenkins.client.job.deploy.lab.mk
 parameters:
   _param:
     single_address: 172.18.195.70
@@ -23,13 +21,89 @@ parameters:
     java_environment_platform: openjdk
     jenkins_gerrit_url: "ssh://jenkins-mk@gerrit.mcp.mirantis.net:29418"
     jenkins_salt_api_url: "http://${_param:salt_master_host}:8000"
+    jenkins_deploy_lab_mk_jobs:
+      - lab: virtual_mcp11_ironic_small
+        install: core,openstack
+        stack_type: heat
+        test: openstack
+        timer: ""
+        extra_formulas: ""
+      - lab: virtual_mcp11_aio
+        install: core,openstack
+        stack_type: heat
+        test: openstack
+        timer: ""
+        extra_formulas: ""       
+    jenkins_security_matrix_admins:
+      # Full admin access
+      - jenkins-mk
+      - vsaienko
+      - ovoshchana
+      - mkarpin
+    jenkins_security_matrix_read:
+      # Read only access
+      - anonymous
+      - fuel-qa-team-eng
+      - mirantis
+      - mirantis-mcp-ci-eng
+      - mosqa-eng
+      - opencontrail-eng
+      - qa-eng
+    jenkins_security_matrix_build:
+      # Read + permissions to build jobs
+      - fuel-qa-team-eng
+      - mirantis
+      - mirantis-mcp-ci-eng
+      - mosqa-eng
+      - opencontrail-eng
+      - qa-eng
+    jenkins_security_matrix_write:
+      # Build permissions + create/delete, whatever.
+      - fuel-qa-team-eng
+      - mirantis-mcp-ci-eng
+      - mosqa-eng
+      - opencontrail-eng
+      - qa-eng
+      - obourdon
   jenkins:
     client:
-      enabled: true
+      security:
+        matrix:
+          permissions:
+            Jenkins:
+              ADMINISTER: ${_param:jenkins_security_matrix_admins}
+              READ: ${_param:jenkins_security_matrix_read}
+            hudson:
+              model:
+                Item:
+                  BUILD: ${_param:jenkins_security_matrix_build}
+                  CANCEL: ${_param:jenkins_security_matrix_build}
+                  CONFIGURE: ${_param:jenkins_security_matrix_write}
+                  CREATE: ${_param:jenkins_security_matrix_write}
+                  DELETE: ${_param:jenkins_security_matrix_write}
+                  DISCOVER: ${_param:jenkins_security_matrix_build}
+                  EXTENDED_READ: ${_param:jenkins_security_matrix_build}
+                  WIPEOUT: ${_param:jenkins_security_matrix_write}
+                  WORKSPACE: ${_param:jenkins_security_matrix_write}
+                  READ: ${_param:jenkins_security_matrix_read}
+                Run:
+                  DELETE: ${_param:jenkins_security_matrix_write}
+                  ARTIFACTS: ${_param:jenkins_security_matrix_write}
+                  UPDATE: ${_param:jenkins_security_matrix_write}
+                View:
+                  READ: ${_param:jenkins_security_matrix_read}
+            com:
+              sonyericsson:
+                hudson:
+                  plugins:
+                    gerrit:
+                      trigger:
+                        PluginImpl:
+                          RETRIGGER: ${_param:jenkins_security_matrix_build}
   linux:
     system:
-      name: 'mc0n1-kha.kha.mirantis.net'
-      domain: local
+      name: 'mc0n1-kha'
+      domain: kha.mirantis.net
       user:
         jenkins:
           name: jenkins

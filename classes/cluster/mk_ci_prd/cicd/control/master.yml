@@ -14,7 +14,7 @@ classes:
   - system_extra.jenkins.client.credential.openstack-devcloud
  # - system_extra.jenkins.client.artifactory
   - system_extra.jenkins.client.node
-  - system_extra.jenkins.client.security
+#  - system_extra.jenkins.client.security
  # - system_extra.jenkins.client.slack
  # - system_extra.jenkins.client.smtp
   - system_extra.jenkins.client.credential.salt-qa
