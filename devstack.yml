@@ -13,7 +13,7 @@ parameters:
           scm:
             type: git
             url: "https://github.com/anascko/jenkins-qa/"
-            script: DevStack-pipeline.groovy
+            script: devstack-pipeline.groovy
           param:
             # deployments and test settings
             ENV_NAME:
