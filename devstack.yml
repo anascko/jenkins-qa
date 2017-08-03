@@ -12,7 +12,7 @@ parameters:
           concurrent: true
           scm:
             type: git
-            url: "https://github.com/anascko/virtual/"
+            url: "https://github.com/anascko/jenkins-qa/"
             script: DevStack-pipeline.groovy
           param:
             # deployments and test settings
