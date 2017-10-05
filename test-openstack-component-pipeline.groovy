@@ -46,5 +46,10 @@ node {
             [$class: 'StringParameterValue', name: 'TEST_PASS_THRESHOLD', value: '100'],
             [$class: 'BooleanParameterValue', name: 'FAIL_ON_TESTS', value: true],
         ])
-    } 
+    }
+    
+    // Stage repository create
+    GERRIT_CHANGE_NUMBER
+    
+    
 }
