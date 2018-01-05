@@ -13,7 +13,7 @@ node('builder') {
     stage('Get repository and install project') {
         return sh (script: """
         set -xe
-        git clone ${PROJECT_URL} -b ${BRANCH}',
+        git clone ${PROJECT_URL} -b ${BRANCH}
         cd ${PROJECT}
         npm install
         """, returnStdout: true)
