@@ -1,4 +1,4 @@
-#!/usr/bin/env groovy
+#!/usr/bin/groovy
  
 /**
     Test jenkins Job
