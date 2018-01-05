@@ -11,11 +11,11 @@
 
 node('builder') {    
     stage('Get repository and install project') {
-        return sh (script: '''
+        return sh (script: """
             git clone ${PROJECT_URL} -b ${BRANCH}',
             d ${PROJECT}
             npm install
-        ''', returnStdout: true)
+        """, returnStdout: true)
     }
 
 if (RUN_TEST.toBoolean()){
